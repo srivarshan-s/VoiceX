@@ -1,0 +1,72 @@
+{% extends "voicex/base.html" %}
+{%load static%}
+{% block content %}
+
+  body
+  {
+    background-image:url("https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+  }
+
+  .bg2
+  {
+    background-color: #0f6070;
+    opacity: 0.4;
+  }
+
+  .box
+  {
+    box-shadow:5px 5px 2px #888888;
+    border-radius: 10px;
+    padding: 50px;
+    margin-left: 425px;
+    font-family: Times;
+    width: 300px;
+  }
+
+  </style>
+
+  <body oncontextmenu="func1()">
+
+  <div>
+    <header class="header1">
+      <div class="text-center">
+      <br>
+      <div class="a">VoiceX</div>
+      </div>
+    </header>
+  </div>
+
+  <div class="justify-content-center align-items-center">
+    <div class="container centre">
+      <div class="box bg2">
+        <div class="text1 text-center">VoiceX<br>Text-to-Speech Engine</div>
+        <br>
+        <div class="text-center">
+        <button type="button" class="button2" onclick="window.location.href='http://localhost:8000/voicex/text_editor/'">START</button>
+        </div>
+        <br>
+        <div class="text-center">
+        <button type="button" class="button2" onclick="window.location.href='http://localhost:8000/voicex/recommend/'">RECOMMEND</button>
+        </div>
+      </div>
+    </div>
+    <div class="container" style="position:relative; left:410px; opacity:0.6">
+      <audio controls>
+        <source src="{% static 'audio/mytext.mp3' %}" type="audio/mpeg">
+      </audio>
+    </div>
+  </div>
+
+  </body>
+
+  <script>
+    function func1()
+    {
+      return false;
+    }
+  </script>
+
+{% endblock content %}
